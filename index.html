@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackline Code | Engenharia de Precisão</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-circle">B</div>
+            <h1>Blackline Code</h1>
+            <p class="subtitle">Engenharia de Precisão Web</p>
+        </header>
+
+        <main>
+            <div class="links-grid">
+                <a href="https://github.com/SEU_USUARIO" class="link-card">Portfólio GitHub</a>
+                <a href="https://wa.me/5581900000000" class="link-card highlight">Orçamento via WhatsApp</a>
+            </div>
+
+            <section class="calculator card">
+                <h3>📊 Simulador de Lucro (ROI)</h3>
+                <div class="input-group">
+                    <label>Valor do seu Serviço (R$)</label>
+                    <input type="number" id="ticket" placeholder="Ex: 100" oninput="calcularROI()">
+                </div>
+                <div class="input-group">
+                    <label>Novos Clientes/Mês com o Site</label>
+                    <input type="number" id="leads" value="3" oninput="calcularROI()">
+                </div>
+                <div class="result-area">
+                    <p>Retorno Estimado: <span id="roi-result">R$ 0,00</span></p>
+                    <p id="payback-msg"></p>
+                </div>
+            </section>
+
+            <section class="contact card">
+                <h3>📩 Solicitar Consultoria</h3>
+                <form action="https://formspree.io/f/mnnezdbe" method="POST">
+                    <input type="text" name="name" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                    <button type="submit" class="btn-primary">Enviar para Análise</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Blackline Code - Entrega em 48h</p>
+        </footer>
+    </div>
+
+    <script>
+        function calcularROI() {
+            const ticket = document.getElementById('ticket').value || 0;
+            const leads = document.getElementById('leads').value || 0;
+            const total = ticket * leads;
+            const resElement = document.getElementById('roi-result');
+            const msgElement = document.getElementById('payback-msg');
+
+            resElement.innerText = 'R$ ' + total.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+
+            if(total >= 297) {
+                msgElement.innerText = "✅ O site se paga no 1º mês!";
+                msgElement.style.color = "#00ff88";
+            } else {
+                msgElement.innerText = "";
+            }
+        }
+    </script>
+</body>
+</html>

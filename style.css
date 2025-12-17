@@ -1,0 +1,81 @@
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #141414;
+    --accent-color: #00ff88;
+    --text-main: #ffffff;
+    --text-dim: #a0a0a0;
+    --border: #222;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container { width: 100%; max-width: 400px; text-align: center; }
+
+header { margin-bottom: 30px; }
+
+.logo-circle {
+    width: 70px; height: 70px;
+    background: var(--accent-color);
+    color: #000;
+    font-size: 2rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; margin: 0 auto 15px;
+}
+
+h1 { font-size: 1.5rem; letter-spacing: -1px; }
+.subtitle { color: var(--text-dim); font-size: 0.9rem; }
+
+.links-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; }
+
+.link-card {
+    background: var(--card-bg);
+    padding: 16px; border-radius: 12px;
+    text-decoration: none; color: var(--text-main);
+    font-weight: 600; border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.link-card.highlight { border-color: var(--accent-color); color: var(--accent-color); }
+.link-card:hover { transform: translateY(-3px); background: #1c1c1c; }
+
+.card {
+    background: var(--card-bg); padding: 20px;
+    border-radius: 16px; margin-bottom: 20px;
+    text-align: left; border: 1px solid var(--border);
+}
+
+h3 { font-size: 1rem; margin-bottom: 15px; color: var(--accent-color); }
+
+.input-group { margin-bottom: 12px; }
+label { display: block; font-size: 0.75rem; color: var(--text-dim); margin-bottom: 5px; }
+
+input {
+    width: 100%; padding: 12px;
+    background: #000; border: 1px solid var(--border);
+    color: #fff; border-radius: 8px;
+}
+
+.result-area {
+    margin-top: 15px; padding: 15px;
+    background: #000; border-radius: 8px; text-align: center;
+}
+
+#roi-result { font-size: 1.4rem; font-weight: 800; color: var(--accent-color); }
+
+.btn-primary {
+    width: 100%; padding: 15px;
+    background: var(--accent-color); border: none;
+    border-radius: 8px; font-weight: 800;
+    cursor: pointer; margin-top: 10px;
+}
+
+footer { color: var(--text-dim); font-size: 0.7rem; margin-top: 20px; }
