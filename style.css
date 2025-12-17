@@ -49,19 +49,26 @@ h1 { font-size: 1.5rem; letter-spacing: -1px; }
 
 .card {
     background: var(--card-bg); padding: 20px;
-    border-radius: 16px; margin-bottom: 20px;
+    border-radius: 16px; margin-bottom: 25px; /* Aumentei um pouco o respiro entre cards */
     text-align: left; border: 1px solid var(--border);
 }
 
-h3 { font-size: 1rem; margin-bottom: 15px; color: var(--accent-color); }
+h3 { font-size: 1rem; margin-bottom: 20px; color: var(--accent-color); }
 
-.input-group { margin-bottom: 12px; }
-label { display: block; font-size: 0.75rem; color: var(--text-dim); margin-bottom: 5px; }
+/* Ajuste de espaçamento nos grupos de input */
+.input-group { margin-bottom: 18px; } /* Espaço maior entre os campos da calculadora */
+label { display: block; font-size: 0.75rem; color: var(--text-dim); margin-bottom: 8px; }
 
 input {
-    width: 100%; padding: 12px;
+    width: 100%; padding: 14px; /* Mais área de toque para mobile */
     background: #000; border: 1px solid var(--border);
     color: #fff; border-radius: 8px;
+    margin-bottom: 15px; /* Resolve o problema de ficar um em cima do outro */
+}
+
+/* Remove a margem do último input para não afastar demais o botão */
+form input:last-of-type {
+    margin-bottom: 5px;
 }
 
 .result-area {
@@ -75,7 +82,13 @@ input {
     width: 100%; padding: 15px;
     background: var(--accent-color); border: none;
     border-radius: 8px; font-weight: 800;
-    cursor: pointer; margin-top: 10px;
+    cursor: pointer; margin-top: 15px;
+    transition: 0.3s;
 }
 
-footer { color: var(--text-dim); font-size: 0.7rem; margin-top: 20px; }
+.btn-primary:hover {
+    filter: brightness(1.1);
+    transform: scale(1.01);
+}
+
+footer { color: var(--text-dim); font-size: 0.7rem; margin-top: 30px; }
